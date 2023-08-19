@@ -27,9 +27,6 @@
     "lint": "eslint \"src/**/*.ts\" && pnpm typecheck",
     "test": "jest"
   },
-  "publishConfig": {
-    "@TheISsO:registry": "https://npm.pkg.github.com"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/TheISsO/linaria-shorthands"
