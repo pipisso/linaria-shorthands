@@ -11,8 +11,35 @@ type BorderRightCSS2 = `border-right-width:${BorderRightWidth};border-right-styl
 type BorderRightCSS3 =
   `border-right-width:${BorderRightWidth};border-right-style:${BorderRightStyle};border-right-color:${BorderRightColor};`;
 
+/**
+ *
+ * @example
+ *   borderRight('1px')
+ *   // will result in the following:
+ *   border-right-width:1px;
+ *
+ */
 export function borderRight(width: BorderRightWidth): BorderRightCSS1;
+/**
+ *
+ * @example
+ *   borderRight('1px', 'solid')
+ *   // will result in the following:
+ *   border-right-width:1px;
+ *   border-right-style:solid;
+ *
+ */
 export function borderRight(width: BorderRightWidth, style: BorderRightStyle): BorderRightCSS2;
+/**
+ *
+ * @example
+ *   borderRight('1px', 'solid', 'red')
+ *   // will result in the following:
+ *   border-right-width:1px;
+ *   border-right-style:solid;
+ *   border-right-color:red;
+ *
+ */
 export function borderRight(width: BorderRightWidth, style: BorderRightStyle, color: BorderRightColor): BorderRightCSS3;
 
 export function borderRight(...properties: [BorderRightWidth, BorderRightStyle?, BorderRightColor?]): BorderRightCSS {
