@@ -1,24 +1,25 @@
 import type * as CSS from 'csstype';
 import {getStyleString} from '../utils/getStyleString';
 
-type BorderStyleStyle =
+type BorderStyleValue = CSS.Property.BorderStyle;
+
+type BorderStyleCSS =
   `border-top-style:${string};border-right-style:${string};border-bottom-style:${string};border-left-style:${string};`;
-type BorderStyleInput = CSS.StandardShorthandProperties['borderStyle'];
 
-export function borderStyle(all: BorderStyleInput): BorderStyleStyle;
-export function borderStyle(vertical: BorderStyleInput, horizontal: BorderStyleInput): BorderStyleStyle;
+export function borderStyle(all: BorderStyleValue): BorderStyleCSS;
+export function borderStyle(vertical: BorderStyleValue, horizontal: BorderStyleValue): BorderStyleCSS;
 export function borderStyle(
-  top: BorderStyleInput,
-  horizontal: BorderStyleInput,
-  bottom: BorderStyleInput,
-): BorderStyleStyle;
+  top: BorderStyleValue,
+  horizontal: BorderStyleValue,
+  bottom: BorderStyleValue,
+): BorderStyleCSS;
 export function borderStyle(
-  top: BorderStyleInput,
-  right: BorderStyleInput,
-  bottom: BorderStyleInput,
-  left: BorderStyleInput,
-): BorderStyleStyle;
+  top: BorderStyleValue,
+  right: BorderStyleValue,
+  bottom: BorderStyleValue,
+  left: BorderStyleValue,
+): BorderStyleCSS;
 
-export function borderStyle(...properties: BorderStyleInput[]): BorderStyleStyle {
-  return getStyleString('border', 'style', ...properties) as BorderStyleStyle;
+export function borderStyle(...properties: BorderStyleValue[]): BorderStyleCSS {
+  return getStyleString('border', 'style', ...properties) as BorderStyleCSS;
 }

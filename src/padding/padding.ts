@@ -1,14 +1,15 @@
 import type * as CSS from 'csstype';
 import {getStyleString} from '../utils/getStyleString';
 
-type PaddingStyle = `padding-top:${string};padding-right:${string};padding-bottom:${string};padding-left:${string};`;
-type PaddingInput = CSS.StandardShorthandProperties['padding'];
+type PaddingValue = CSS.Property.Padding;
 
-export function padding(all: PaddingInput): PaddingStyle;
-export function padding(vertical: PaddingInput, horizontal: PaddingInput): PaddingStyle;
-export function padding(top: PaddingInput, horizontal: PaddingInput, bottom: PaddingInput): PaddingStyle;
-export function padding(top: PaddingInput, right: PaddingInput, bottom: PaddingInput, left: PaddingInput): PaddingStyle;
+type PaddingCSS = `padding-top:${string};padding-right:${string};padding-bottom:${string};padding-left:${string};`;
 
-export function padding(...properties: PaddingInput[]): PaddingStyle {
-  return getStyleString('padding', undefined, ...properties) as PaddingStyle;
+export function padding(all: PaddingValue): PaddingCSS;
+export function padding(vertical: PaddingValue, horizontal: PaddingValue): PaddingCSS;
+export function padding(top: PaddingValue, horizontal: PaddingValue, bottom: PaddingValue): PaddingCSS;
+export function padding(top: PaddingValue, right: PaddingValue, bottom: PaddingValue, left: PaddingValue): PaddingCSS;
+
+export function padding(...properties: PaddingValue[]): PaddingCSS {
+  return getStyleString('padding', undefined, ...properties) as PaddingCSS;
 }

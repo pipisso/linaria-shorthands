@@ -1,24 +1,25 @@
 import type * as CSS from 'csstype';
 import {getStyleString} from '../utils/getStyleString';
 
-type BorderColorStyle =
+type BorderColorValue = CSS.Property.BorderColor;
+
+type BorderColorCSS =
   `border-top-color:${string};border-right-color:${string};border-bottom-color:${string};border-left-color:${string};`;
-type BorderColorInput = CSS.StandardShorthandProperties['borderColor'];
 
-export function borderColor(all: BorderColorInput): BorderColorStyle;
-export function borderColor(vertical: BorderColorInput, horizontal: BorderColorInput): BorderColorStyle;
+export function borderColor(all: BorderColorValue): BorderColorCSS;
+export function borderColor(vertical: BorderColorValue, horizontal: BorderColorValue): BorderColorCSS;
 export function borderColor(
-  top: BorderColorInput,
-  horizontal: BorderColorInput,
-  bottom: BorderColorInput,
-): BorderColorStyle;
+  top: BorderColorValue,
+  horizontal: BorderColorValue,
+  bottom: BorderColorValue,
+): BorderColorCSS;
 export function borderColor(
-  top: BorderColorInput,
-  right: BorderColorInput,
-  bottom: BorderColorInput,
-  left: BorderColorInput,
-): BorderColorStyle;
+  top: BorderColorValue,
+  right: BorderColorValue,
+  bottom: BorderColorValue,
+  left: BorderColorValue,
+): BorderColorCSS;
 
-export function borderColor(...properties: BorderColorInput[]): BorderColorStyle {
-  return getStyleString('border', 'color', ...properties) as BorderColorStyle;
+export function borderColor(...properties: BorderColorValue[]): BorderColorCSS {
+  return getStyleString('border', 'color', ...properties) as BorderColorCSS;
 }

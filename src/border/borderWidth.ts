@@ -1,24 +1,25 @@
 import type * as CSS from 'csstype';
 import {getStyleString} from '../utils/getStyleString';
 
-type BorderWidthStyle =
+type BorderWidthValue = CSS.Property.BorderWidth;
+
+type BorderWidthCSS =
   `border-top-width:${string};border-right-width:${string};border-bottom-width:${string};border-left-width:${string};`;
-type BorderWidthInput = CSS.StandardShorthandProperties['borderWidth'];
 
-export function borderWidth(all: BorderWidthInput): BorderWidthStyle;
-export function borderWidth(vertical: BorderWidthInput, horizontal: BorderWidthInput): BorderWidthStyle;
+export function borderWidth(all: BorderWidthValue): BorderWidthCSS;
+export function borderWidth(vertical: BorderWidthValue, horizontal: BorderWidthValue): BorderWidthCSS;
 export function borderWidth(
-  top: BorderWidthInput,
-  horizontal: BorderWidthInput,
-  bottom: BorderWidthInput,
-): BorderWidthStyle;
+  top: BorderWidthValue,
+  horizontal: BorderWidthValue,
+  bottom: BorderWidthValue,
+): BorderWidthCSS;
 export function borderWidth(
-  top: BorderWidthInput,
-  right: BorderWidthInput,
-  bottom: BorderWidthInput,
-  left: BorderWidthInput,
-): BorderWidthStyle;
+  top: BorderWidthValue,
+  right: BorderWidthValue,
+  bottom: BorderWidthValue,
+  left: BorderWidthValue,
+): BorderWidthCSS;
 
-export function borderWidth(...properties: BorderWidthInput[]): BorderWidthStyle {
-  return getStyleString('border', 'width', ...properties) as BorderWidthStyle;
+export function borderWidth(...properties: BorderWidthValue[]): BorderWidthCSS {
+  return getStyleString('border', 'width', ...properties) as BorderWidthCSS;
 }

@@ -1,14 +1,15 @@
 import type * as CSS from 'csstype';
 import {getStyleString} from '../utils/getStyleString';
 
-type MarginStyle = `margin-top:${string};margin-right:${string};margin-bottom:${string};margin-left:${string};`;
-type MarginInput = CSS.StandardShorthandProperties['margin'];
+type MarginValue = CSS.Property.Margin;
 
-export function margin(all: MarginInput): MarginStyle;
-export function margin(vertical: MarginInput, horizontal: MarginInput): MarginStyle;
-export function margin(top: MarginInput, horizontal: MarginInput, bottom: MarginInput): MarginStyle;
-export function margin(top: MarginInput, right: MarginInput, bottom: MarginInput, left: MarginInput): MarginStyle;
+type MarginCSS = `margin-top:${string};margin-right:${string};margin-bottom:${string};margin-left:${string};`;
 
-export function margin(...properties: MarginInput[]): MarginStyle {
-  return getStyleString('margin', undefined, ...properties) as MarginStyle;
+export function margin(all: MarginValue): MarginCSS;
+export function margin(vertical: MarginValue, horizontal: MarginValue): MarginCSS;
+export function margin(top: MarginValue, horizontal: MarginValue, bottom: MarginValue): MarginCSS;
+export function margin(top: MarginValue, right: MarginValue, bottom: MarginValue, left: MarginValue): MarginCSS;
+
+export function margin(...properties: MarginValue[]): MarginCSS {
+  return getStyleString('margin', undefined, ...properties) as MarginCSS;
 }
