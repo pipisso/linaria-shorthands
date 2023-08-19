@@ -1,6 +1,10 @@
 import {expect, test} from '@jest/globals';
 import {padding} from './padding';
 
+test('padding shorthand zero value', () => {
+  expect(padding(0)).toBe(`padding-top:0;padding-right:0;padding-bottom:0;padding-left:0;`);
+});
+
 test('padding shorthand 1 value', () => {
   expect(padding('1px')).toBe(`padding-top:1px;padding-right:1px;padding-bottom:1px;padding-left:1px;`);
 });
