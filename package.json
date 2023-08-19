@@ -29,12 +29,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/TheISsO/linaria-shorthands"
+    "url": "https://github.com/pipisso/linaria-shorthands"
   },
   "bugs": {
-    "url": "https://github.com/TheISsO/linaria-shorthands/issues"
+    "url": "https://github.com/pipisso/linaria-shorthands/issues"
   },
-  "homepage": "https://github.com/TheISsO/linaria-shorthands/README.md",
+  "homepage": "https://github.com/pipisso/linaria-shorthands/README.md",
   "packageManager": "pnpm@8.6.12",
   "sideEffects": false,
   "devDependencies": {
