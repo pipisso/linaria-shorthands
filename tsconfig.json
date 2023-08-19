@@ -5,6 +5,7 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "node",
+    "esModuleInterop": true,
     "noEmit": true
   },
   "include": ["src/index.ts"]

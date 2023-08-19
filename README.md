@@ -25,21 +25,9 @@ The following Shorthands are available:
 
 ## Examples
 
-The following examples are using the `css` tag but they also
-work with the `styled` tag.
-
 > **Note**
-> You can also use the default export provided by `@theisso/shorthands`
-
-```ts
-import {css} from '@linaria/atomic';
-import shorthands from 'linaria-shorthands';
-
-const style = css`
-  ${shorthands.margin('1px', '2px', '3px', '4px')}
-  ${shorthands.padding('1px', '2px', '3px', '4px')}
-`;
-```
+> The following examples are using the `css` tag but they also
+> work with the `styled` tag.
 
 ### `margin`
 
