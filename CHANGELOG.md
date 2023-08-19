@@ -4,6 +4,8 @@ All notable changes to the library will be documented in this file.
 
 ## vX.X.X (Month DD, YYYY)
 
+- Updated the README.md file.
+
 ## v0.2.1 (August 19, 2023)
 
 - Updated the README.md file.

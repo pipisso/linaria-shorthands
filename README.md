@@ -179,9 +179,9 @@ import {css} from '@linaria/atomic';
 import {borderWidth} from 'linaria-shorthands';
 
 const style = css`
-  ${borderWidth('1px', 'blue', 'green', 'yellow')}
-  ${borderWidth('1px', 'blue', 'green')}
-  ${borderWidth('1px', 'blue')}
+  ${borderWidth('1px', '2px', '3px', '4px')}
+  ${borderWidth('1px', '2px', '3px')}
+  ${borderWidth('1px', '2px')}
   ${borderWidth('1px')}
 `;
 ```
