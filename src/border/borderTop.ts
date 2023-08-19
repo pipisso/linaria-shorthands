@@ -1,9 +1,10 @@
 import type * as CSS from 'csstype';
 import {getFixedStyleString} from '../utils/getFixedStyleString';
 
-type BorderTopWidth = CSS.Property.BorderTopWidth;
-type BorderTopStyle = CSS.Property.BorderTopStyle;
-type BorderTopColor = CSS.Property.BorderTopColor;
+type BorderTopValue = [BorderTopWidthValue, BorderTopStyleValue?, BorderTopColorValue?];
+type BorderTopWidthValue = CSS.Property.BorderTopWidth;
+type BorderTopStyleValue = CSS.Property.BorderTopStyle;
+type BorderTopColorValue = CSS.Property.BorderTopColor;
 
 type BorderTopCSS = BorderTopCSS1 | BorderTopCSS2 | BorderTopCSS3;
 type BorderTopCSS1 = `border-top-width:${string};`;
@@ -18,7 +19,7 @@ type BorderTopCSS3 = `${BorderTopCSS2}border-top-color:${string};`;
  *   border-top-width:1px;
  *
  */
-export function borderTop(width: BorderTopWidth): BorderTopCSS1;
+export function borderTop(width: BorderTopWidthValue): BorderTopCSS1;
 /**
  *
  * @example
@@ -28,7 +29,7 @@ export function borderTop(width: BorderTopWidth): BorderTopCSS1;
  *   border-top-style:solid;
  *
  */
-export function borderTop(width: BorderTopWidth, style: BorderTopStyle): BorderTopCSS2;
+export function borderTop(width: BorderTopWidthValue, style: BorderTopStyleValue): BorderTopCSS2;
 /**
  *
  * @example
@@ -39,8 +40,12 @@ export function borderTop(width: BorderTopWidth, style: BorderTopStyle): BorderT
  *   border-top-color:red;
  *
  */
-export function borderTop(width: BorderTopWidth, style: BorderTopStyle, color: BorderTopColor): BorderTopCSS3;
+export function borderTop(
+  width: BorderTopWidthValue,
+  style: BorderTopStyleValue,
+  color: BorderTopColorValue,
+): BorderTopCSS3;
 
-export function borderTop(...properties: [BorderTopWidth, BorderTopStyle?, BorderTopColor?]): BorderTopCSS {
+export function borderTop(...properties: BorderTopValue): BorderTopCSS {
   return getFixedStyleString('border', ['width', 'style', 'color'], 'top', ...properties) as BorderTopCSS;
 }

@@ -1,9 +1,10 @@
 import type * as CSS from 'csstype';
 import {getFixedStyleString} from '../utils/getFixedStyleString';
 
-type BorderLeftWidth = CSS.Property.BorderLeftWidth;
-type BorderLeftStyle = CSS.Property.BorderLeftStyle;
-type BorderLeftColor = CSS.Property.BorderLeftColor;
+type BorderLeftValue = [BorderLeftWidthValue, BorderLeftStyleValue?, BorderLeftColorValue?];
+type BorderLeftWidthValue = CSS.Property.BorderLeftWidth;
+type BorderLeftStyleValue = CSS.Property.BorderLeftStyle;
+type BorderLeftColorValue = CSS.Property.BorderLeftColor;
 
 type BorderLeftCSS = BorderLeftCSS1 | BorderLeftCSS2 | BorderLeftCSS3;
 type BorderLeftCSS1 = `border-left-width:${string};`;
@@ -18,7 +19,7 @@ type BorderLeftCSS3 = `${BorderLeftCSS2}border-left-color:${string};`;
  *   border-left-width:1px;
  *
  */
-export function borderLeft(width: BorderLeftWidth): BorderLeftCSS1;
+export function borderLeft(width: BorderLeftWidthValue): BorderLeftCSS1;
 /**
  *
  * @example
@@ -28,7 +29,7 @@ export function borderLeft(width: BorderLeftWidth): BorderLeftCSS1;
  *   border-left-style:solid;
  *
  */
-export function borderLeft(width: BorderLeftWidth, style: BorderLeftStyle): BorderLeftCSS2;
+export function borderLeft(width: BorderLeftWidthValue, style: BorderLeftStyleValue): BorderLeftCSS2;
 /**
  *
  * @example
@@ -39,8 +40,12 @@ export function borderLeft(width: BorderLeftWidth, style: BorderLeftStyle): Bord
  *   border-left-color:red;
  *
  */
-export function borderLeft(width: BorderLeftWidth, style: BorderLeftStyle, color: BorderLeftColor): BorderLeftCSS3;
+export function borderLeft(
+  width: BorderLeftWidthValue,
+  style: BorderLeftStyleValue,
+  color: BorderLeftColorValue,
+): BorderLeftCSS3;
 
-export function borderLeft(...properties: [BorderLeftWidth, BorderLeftStyle?, BorderLeftColor?]): BorderLeftCSS {
+export function borderLeft(...properties: BorderLeftValue): BorderLeftCSS {
   return getFixedStyleString('border', ['width', 'style', 'color'], 'left', ...properties) as BorderLeftCSS;
 }

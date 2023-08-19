@@ -3,9 +3,10 @@ import {borderWidth, type BorderWidthCSS} from './borderWidth';
 import {borderStyle, type BorderStyleCSS} from './borderStyle';
 import {borderColor, type BorderColorCSS} from './borderColor';
 
-type BorderWidth = CSS.Property.BorderWidth;
-type BorderStyle = CSS.Property.BorderStyle;
-type BorderColor = CSS.Property.BorderColor;
+type BorderValue = [BorderWidthValue, BorderStyleValue?, BorderColorValue?];
+type BorderWidthValue = CSS.Property.BorderWidth;
+type BorderStyleValue = CSS.Property.BorderStyle;
+type BorderColorValue = CSS.Property.BorderColor;
 
 type BorderCSS = BorderCSS1 | BorderCSS2 | BorderCSS3;
 type BorderCSS1 = BorderWidthCSS;
@@ -23,7 +24,7 @@ type BorderCSS3 = `${BorderWidthCSS}${BorderStyleCSS}${BorderColorCSS}`;
  *   border-left-width:1px
  *
  */
-export function border(width: BorderWidth): BorderCSS1;
+export function border(width: BorderWidthValue): BorderCSS1;
 /**
  *
  * @example
@@ -39,7 +40,7 @@ export function border(width: BorderWidth): BorderCSS1;
  *   border-left-style:solid;
  *
  */
-export function border(width: BorderWidth, style: BorderStyle): BorderCSS2;
+export function border(width: BorderWidthValue, style: BorderStyleValue): BorderCSS2;
 /**
  *
  * @example
@@ -59,9 +60,9 @@ export function border(width: BorderWidth, style: BorderStyle): BorderCSS2;
  *   border-left-color:red;
  *
  */
-export function border(width: BorderWidth, style: BorderStyle, color: BorderColor): BorderCSS3;
+export function border(width: BorderWidthValue, style: BorderStyleValue, color: BorderColorValue): BorderCSS3;
 
-export function border(...properties: [BorderWidth, BorderStyle?, BorderColor?]): BorderCSS {
+export function border(...properties: BorderValue): BorderCSS {
   let css = '';
   css += borderWidth(properties[0]);
   if (properties[1]) {

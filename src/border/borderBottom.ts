@@ -1,9 +1,10 @@
 import type * as CSS from 'csstype';
 import {getFixedStyleString} from '../utils/getFixedStyleString';
 
-type BorderBottomWidth = CSS.Property.BorderBottomWidth;
-type BorderBottomStyle = CSS.Property.BorderBottomStyle;
-type BorderBottomColor = CSS.Property.BorderBottomColor;
+type BorderBottomValue = [BorderBottomWidthValue, BorderBottomStyleValue?, BorderBottomColorValue?];
+type BorderBottomWidthValue = CSS.Property.BorderBottomWidth;
+type BorderBottomStyleValue = CSS.Property.BorderBottomStyle;
+type BorderBottomColorValue = CSS.Property.BorderBottomColor;
 
 type BorderBottomCSS = BorderBottomCSS1 | BorderBottomCSS2 | BorderBottomCSS3;
 type BorderBottomCSS1 = `border-bottom-width:${string};`;
@@ -18,7 +19,7 @@ type BorderBottomCSS3 = `${BorderBottomCSS2}border-bottom-color:${string};`;
  *   border-bottom-width:1px;
  *
  */
-export function borderBottom(width: BorderBottomWidth): BorderBottomCSS1;
+export function borderBottom(width: BorderBottomWidthValue): BorderBottomCSS1;
 /**
  *
  * @example
@@ -28,7 +29,7 @@ export function borderBottom(width: BorderBottomWidth): BorderBottomCSS1;
  *   border-bottom-style:solid;
  *
  */
-export function borderBottom(width: BorderBottomWidth, style: BorderBottomStyle): BorderBottomCSS2;
+export function borderBottom(width: BorderBottomWidthValue, style: BorderBottomStyleValue): BorderBottomCSS2;
 /**
  *
  * @example
@@ -40,13 +41,11 @@ export function borderBottom(width: BorderBottomWidth, style: BorderBottomStyle)
  *
  */
 export function borderBottom(
-  width: BorderBottomWidth,
-  style: BorderBottomStyle,
-  color: BorderBottomColor,
+  width: BorderBottomWidthValue,
+  style: BorderBottomStyleValue,
+  color: BorderBottomColorValue,
 ): BorderBottomCSS3;
 
-export function borderBottom(
-  ...properties: [BorderBottomWidth, BorderBottomStyle?, BorderBottomColor?]
-): BorderBottomCSS {
+export function borderBottom(...properties: BorderBottomValue): BorderBottomCSS {
   return getFixedStyleString('border', ['width', 'style', 'color'], 'bottom', ...properties) as BorderBottomCSS;
 }

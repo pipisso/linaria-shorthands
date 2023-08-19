@@ -1,9 +1,10 @@
 import type * as CSS from 'csstype';
 import {getFixedStyleString} from '../utils/getFixedStyleString';
 
-type BorderRightWidth = CSS.Property.BorderRightWidth;
-type BorderRightStyle = CSS.Property.BorderRightStyle;
-type BorderRightColor = CSS.Property.BorderRightColor;
+type BorderRightValue = [BorderRightWidthValue, BorderRightStyleValue?, BorderRightColorValue?];
+type BorderRightWidthValue = CSS.Property.BorderRightWidth;
+type BorderRightStyleValue = CSS.Property.BorderRightStyle;
+type BorderRightColorValue = CSS.Property.BorderRightColor;
 
 type BorderRightCSS = BorderRightCSS1 | BorderRightCSS2 | BorderRightCSS3;
 type BorderRightCSS1 = `border-right-width:${string};`;
@@ -18,7 +19,7 @@ type BorderRightCSS3 = `${BorderRightCSS2}border-right-color:${string};`;
  *   border-right-width:1px;
  *
  */
-export function borderRight(width: BorderRightWidth): BorderRightCSS1;
+export function borderRight(width: BorderRightWidthValue): BorderRightCSS1;
 /**
  *
  * @example
@@ -28,7 +29,7 @@ export function borderRight(width: BorderRightWidth): BorderRightCSS1;
  *   border-right-style:solid;
  *
  */
-export function borderRight(width: BorderRightWidth, style: BorderRightStyle): BorderRightCSS2;
+export function borderRight(width: BorderRightWidthValue, style: BorderRightStyleValue): BorderRightCSS2;
 /**
  *
  * @example
@@ -39,8 +40,12 @@ export function borderRight(width: BorderRightWidth, style: BorderRightStyle): B
  *   border-right-color:red;
  *
  */
-export function borderRight(width: BorderRightWidth, style: BorderRightStyle, color: BorderRightColor): BorderRightCSS3;
+export function borderRight(
+  width: BorderRightWidthValue,
+  style: BorderRightStyleValue,
+  color: BorderRightColorValue,
+): BorderRightCSS3;
 
-export function borderRight(...properties: [BorderRightWidth, BorderRightStyle?, BorderRightColor?]): BorderRightCSS {
+export function borderRight(...properties: BorderRightValue): BorderRightCSS {
   return getFixedStyleString('border', ['width', 'style', 'color'], 'right', ...properties) as BorderRightCSS;
 }
