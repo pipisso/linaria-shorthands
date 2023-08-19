@@ -11,10 +11,10 @@ export type BorderRadiusCSS =
  * @example
  *   borderRadius('1px')
  *   // will result in the following:
- *   border-top-style:1px;
- *   border-right-style:1px;
- *   border-bottom-style:1px;
- *   border-left-style:1px;
+ *   border-top-radius:1px;
+ *   border-right-radius:1px;
+ *   border-bottom-radius:1px;
+ *   border-left-radius:1px;
  *
  */
 export function borderRadius(all: BorderRadiusValue): BorderRadiusCSS;
@@ -23,10 +23,10 @@ export function borderRadius(all: BorderRadiusValue): BorderRadiusCSS;
  * @example
  *   borderRadius('1px', '2px')
  *   // will result in the following:
- *   border-top-style:1px;
- *   border-right-style:2px;
- *   border-bottom-style:sol1pxid;
- *   border-left-style:2px;
+ *   border-top-radius:1px;
+ *   border-right-radius:2px;
+ *   border-bottom-radius:sol1pxid;
+ *   border-left-radius:2px;
  *
  */
 export function borderRadius(vertical: BorderRadiusValue, horizontal: BorderRadiusValue): BorderRadiusCSS;
@@ -35,10 +35,10 @@ export function borderRadius(vertical: BorderRadiusValue, horizontal: BorderRadi
  * @example
  *   borderRadius('1px', '2px', '3px')
  *   // will result in the following:
- *   border-top-style:1px;
- *   border-right-style:2px;
- *   border-bottom-style:3px;
- *   border-left-style:2px;
+ *   border-top-radius:1px;
+ *   border-right-radius:2px;
+ *   border-bottom-radius:3px;
+ *   border-left-radius:2px;
  *
  */
 export function borderRadius(
@@ -51,10 +51,10 @@ export function borderRadius(
  * @example
  *   borderRadius('1px', '2px', '3px', '4px')
  *   // will result in the following:
- *   border-top-style:1px;
- *   border-right-style:2px;
- *   border-bottom-style:3px;
- *   border-left-style:4px;
+ *   border-top-radius:1px;
+ *   border-right-radius:2px;
+ *   border-bottom-radius:3px;
+ *   border-left-radius:4px;
  *
  */
 export function borderRadius(

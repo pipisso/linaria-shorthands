@@ -8,6 +8,7 @@ import {borderRight} from './border/borderRight';
 import {borderColor} from './border/borderColor';
 import {borderStyle} from './border/borderStyle';
 import {borderWidth} from './border/borderWidth';
+import {borderRadius} from './border/borderRadius';
 
 export {
   margin,
@@ -20,4 +21,5 @@ export {
   borderStyle,
   borderTop,
   borderWidth,
+  borderRadius,
 };

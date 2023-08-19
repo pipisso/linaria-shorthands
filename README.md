@@ -44,6 +44,7 @@ const style = css`
 8. [`borderStyle`](#borderstyle)
 9. [`borderColor`](#bordercolor)
 10. [`borderWidth`](#borderwidth)
+11. [`borderRadius`](#borderradius)
 
 ## Examples
 
@@ -183,6 +184,20 @@ const style = css`
   ${borderWidth('1px', '2px', '3px')}
   ${borderWidth('1px', '2px')}
   ${borderWidth('1px')}
+`;
+```
+
+### `borderRadius`
+
+```ts
+import {css} from '@linaria/atomic';
+import {borderRadius} from 'linaria-shorthands';
+
+const style = css`
+  ${borderRadius('1px', '2px', '3px', '4px')}
+  ${borderRadius('1px', '2px', '3px')}
+  ${borderRadius('1px', '2px')}
+  ${borderRadius('1px')}
 `;
 ```
 
