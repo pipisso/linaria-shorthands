@@ -9,6 +9,7 @@ All notable changes to the library will be documented in this file.
 - Added `borderStyle` shorthand.
 - Added `borderColor` shorthand.
 - Added `borderTop`, `borderBottom`, `borderRight` and `borderLeft` shorthand.
+- Added `border` shorthand.
 
 ## v0.1.0 (August 19, 2023)
 

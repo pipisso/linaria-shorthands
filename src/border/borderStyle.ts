@@ -3,7 +3,7 @@ import {getStyleString} from '../utils/getStyleString';
 
 type BorderStyleValue = CSS.Property.BorderStyle;
 
-type BorderStyleCSS =
+export type BorderStyleCSS =
   `border-top-style:${string};border-right-style:${string};border-bottom-style:${string};border-left-style:${string};`;
 
 export function borderStyle(all: BorderStyleValue): BorderStyleCSS;

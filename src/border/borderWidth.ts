@@ -3,7 +3,7 @@ import {getStyleString} from '../utils/getStyleString';
 
 type BorderWidthValue = CSS.Property.BorderWidth;
 
-type BorderWidthCSS =
+export type BorderWidthCSS =
   `border-top-width:${string};border-right-width:${string};border-bottom-width:${string};border-left-width:${string};`;
 
 export function borderWidth(all: BorderWidthValue): BorderWidthCSS;

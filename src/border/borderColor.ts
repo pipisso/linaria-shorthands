@@ -3,7 +3,7 @@ import {getStyleString} from '../utils/getStyleString';
 
 type BorderColorValue = CSS.Property.BorderColor;
 
-type BorderColorCSS =
+export type BorderColorCSS =
   `border-top-color:${string};border-right-color:${string};border-bottom-color:${string};border-left-color:${string};`;
 
 export function borderColor(all: BorderColorValue): BorderColorCSS;
