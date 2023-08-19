@@ -4,6 +4,12 @@ All notable changes to the library will be documented in this file.
 
 ## vX.X.X (Month DD, YYYY)
 
+## v0.2.1 (August 19, 2023)
+
+- Updated the README.md file.
+- Fixed some types.
+- Added JSDoc examples.
+
 ## v0.2.0 (August 19, 2023)
 
 - Added `margin` and `padding` shorthands.
