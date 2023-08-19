@@ -3,11 +3,11 @@
 ## Installation
 
 ```js
-npm install --dev linaria-shorthands
+npm install --save-dev linaria-shorthands
 // or
 yarn add --dev linaria-shorthands
 // or
-pnpm add --dev linaria-shorthands
+pnpm add --save-dev linaria-shorthands
 ```
 
 ## Introduction
