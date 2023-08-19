@@ -1,5 +1,5 @@
 import type * as CSS from 'csstype';
-import {getValues} from '../utils/getValues';
+import {getStyleString} from '../utils/getStyleString';
 
 type BorderWidthStyle =
   `border-top-width:${string};border-right-width:${string};border-bottom-width:${string};border-left-width:${string};`;
@@ -20,6 +20,5 @@ export function borderWidth(
 ): BorderWidthStyle;
 
 export function borderWidth(...properties: BorderWidthInput[]): BorderWidthStyle {
-  const values = getValues<BorderWidthInput>(...properties);
-  return `border-top-width:${values[0]};border-right-width:${values[1]};border-bottom-width:${values[2]};border-left-width:${values[3]};`;
+  return getStyleString('border', 'width', ...properties) as BorderWidthStyle;
 }
