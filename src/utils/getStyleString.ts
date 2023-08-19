@@ -1,5 +1,5 @@
 type Property = 'margin' | 'padding' | 'border';
-type Suffix = 'style' | 'width' | 'color' | undefined;
+type Suffix = 'style' | 'width' | 'color' | 'radius' | undefined;
 
 const positions = ['top', 'right', 'bottom', 'left'];
 
