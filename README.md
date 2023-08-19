@@ -28,7 +28,7 @@ import {borderColor} from 'linaria-shorthands';
 
 const style = css`
   ${borderColor(0)}
-  :x: Argument of type '0' is not assignable to parameter of type 'BorderColor'.
+  ❌ Argument of type '0' is not assignable to parameter of type 'BorderColor'.
 `;
 ```
 
