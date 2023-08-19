@@ -6,10 +6,9 @@ type BorderTopStyle = CSS.Property.BorderTopStyle;
 type BorderTopColor = CSS.Property.BorderTopColor;
 
 type BorderTopCSS = BorderTopCSS1 | BorderTopCSS2 | BorderTopCSS3;
-type BorderTopCSS1 = `border-top-width:${BorderTopWidth};`;
-type BorderTopCSS2 = `border-top-width:${BorderTopWidth};border-top-style:${BorderTopStyle};`;
-type BorderTopCSS3 =
-  `border-top-width:${BorderTopWidth};border-top-style:${BorderTopStyle};border-top-color:${BorderTopColor};`;
+type BorderTopCSS1 = `border-top-width:${string};`;
+type BorderTopCSS2 = `${BorderTopCSS2}border-top-style:${string};`;
+type BorderTopCSS3 = `${BorderTopCSS2}border-top-color:${string};`;
 
 /**
  *

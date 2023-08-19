@@ -6,10 +6,9 @@ type BorderBottomStyle = CSS.Property.BorderBottomStyle;
 type BorderBottomColor = CSS.Property.BorderBottomColor;
 
 type BorderBottomCSS = BorderBottomCSS1 | BorderBottomCSS2 | BorderBottomCSS3;
-type BorderBottomCSS1 = `border-bottom-width:${BorderBottomWidth};`;
-type BorderBottomCSS2 = `border-bottom-width:${BorderBottomWidth};border-bottom-style:${BorderBottomStyle};`;
-type BorderBottomCSS3 =
-  `border-bottom-width:${BorderBottomWidth};border-bottom-style:${BorderBottomStyle};border-bottom-color:${BorderBottomColor};`;
+type BorderBottomCSS1 = `border-bottom-width:${string};`;
+type BorderBottomCSS2 = `${BorderBottomCSS1}border-bottom-style:${string};`;
+type BorderBottomCSS3 = `${BorderBottomCSS2}border-bottom-color:${string};`;
 
 /**
  *

@@ -3,8 +3,7 @@ import {getStyleString} from '../utils/getStyleString';
 
 type PaddingValue = CSS.Property.Padding;
 
-type PaddingCSS =
-  `padding-top:${PaddingValue};padding-right:${PaddingValue};padding-bottom:${PaddingValue};padding-left:${PaddingValue};`;
+type PaddingCSS = `padding-top:${string};padding-right:${string};padding-bottom:${string};padding-left:${string};`;
 
 /**
  *

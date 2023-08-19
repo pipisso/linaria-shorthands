@@ -6,10 +6,9 @@ type BorderRightStyle = CSS.Property.BorderRightStyle;
 type BorderRightColor = CSS.Property.BorderRightColor;
 
 type BorderRightCSS = BorderRightCSS1 | BorderRightCSS2 | BorderRightCSS3;
-type BorderRightCSS1 = `border-right-width:${BorderRightWidth};`;
-type BorderRightCSS2 = `border-right-width:${BorderRightWidth};border-right-style:${BorderRightStyle};`;
-type BorderRightCSS3 =
-  `border-right-width:${BorderRightWidth};border-right-style:${BorderRightStyle};border-right-color:${BorderRightColor};`;
+type BorderRightCSS1 = `border-right-width:${string};`;
+type BorderRightCSS2 = `${BorderRightCSS1}border-right-style:${string};`;
+type BorderRightCSS3 = `${BorderRightCSS2}border-right-color:${string};`;
 
 /**
  *
