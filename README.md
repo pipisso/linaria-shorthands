@@ -2,11 +2,11 @@
 
 ## Installation
 
-```js
+```sh
 npm install --save-dev linaria-shorthands
-// or
+# or
 yarn add --dev linaria-shorthands
-// or
+# or
 pnpm add --save-dev linaria-shorthands
 ```
 
@@ -18,7 +18,21 @@ CSS Longhand Properties.
 This Package provides a set of functions to
 write them easy.
 
-The following Shorthands are available:
+### Typescript
+
+This package provides full typescript support with [`csstype`](https://github.com/frenic/csstype).
+
+```ts
+import {css} from '@linaria/atomic';
+import {borderColor} from 'linaria-shorthands';
+
+const style = css`
+  ${borderColor(0)}
+  ❌ Argument of type '0' is not assignable to parameter of type 'BorderColor'.
+`;
+```
+
+### Available Shorthands
 
 1. [`margin`](#margin)
 2. [`padding`](#padding)
