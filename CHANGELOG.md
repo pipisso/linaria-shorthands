@@ -6,6 +6,7 @@ All notable changes to the library will be documented in this file.
 
 - Updated the README.md file.
 - Added `borderRadius` shorthand.
+- Added `transition` shorthand.
 
 ## v0.2.1 (August 19, 2023)
 

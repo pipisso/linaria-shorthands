@@ -9,6 +9,7 @@ import {borderColor} from './border/borderColor';
 import {borderStyle} from './border/borderStyle';
 import {borderWidth} from './border/borderWidth';
 import {borderRadius} from './border/borderRadius';
+import {transition} from './transition/transition';
 
 export {
   margin,
@@ -22,4 +23,5 @@ export {
   borderTop,
   borderWidth,
   borderRadius,
+  transition,
 };

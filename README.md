@@ -201,6 +201,20 @@ const style = css`
 `;
 ```
 
+### `transition`
+
+```ts
+import {css} from '@linaria/atomic';
+import {transition} from 'linaria-shorthands';
+
+const style = css`
+  ${transition(['color', '1s', 'ease-out', '2s'], ['background-color', '2s', 'ease-in', '4s'])}
+  ${transition('color', '1s', 'ease-out', '2s')}
+  ${transition('color', '1s', 'ease-out')}
+  ${transition('color', '1s')}
+`;
+```
+
 ## Credits
 
 This Package is highly inspired by the `shorthands` functions from [griffel](https://griffel.js.org/).
