@@ -4,6 +4,8 @@ All notable changes to the library will be documented in this file.
 
 ## vX.X.X (Month DD, YYYY)
 
+## v0.2.2 (August 25, 2023)
+
 - Updated the README.md file.
 - Added `borderRadius` shorthand.
 - Added `transition` shorthand.
